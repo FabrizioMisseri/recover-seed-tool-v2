@@ -24,7 +24,7 @@ export default {
         }
       }
       else {
-        alert("Attenzione hai inserito un numero non valido perchè maggiore di 2047 o minore di 0.");
+        alert("Attenzione hai inserito un numero non valido perchè maggiore di 2047 o minore di 0. Il numero inserito deve essere compreso tra 0 e 2047.");
       }
     }
   }
