@@ -10,6 +10,12 @@ export default {
     console.log("NB: dizionario bip-39 ", secretWords);
   },
 
+  data() {
+    return {
+      listCounter: 0,
+    }
+  },
+
   methods: {
     generateInputWord() {
       const dictionary = [
@@ -17,16 +23,15 @@ export default {
       ];
       const secretWords = dictionary[0].split(" ");
 
-      let listCounter = 0;
       const wordsList = document.getElementById('words-list');
       let inputNum = document.getElementById('input-num');
       if (inputNum.value < 2048 && inputNum.value >= 0) {
-        if (listCounter < 24) {
+        if (this.listCounter < 24) {
           wordsList.innerHTML += `<li class="list-group-item">
             ${secretWords[inputNum.value].toUpperCase()} (numero inserito: ${inputNum.value})
             </li>`;
           inputNum.value = null;
-          listCounter++;
+          this.listCounter++;
         } else {
           alert("Attenzione la seed è composta solo da 24 parole.");
         }
